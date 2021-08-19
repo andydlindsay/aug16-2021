@@ -12,5 +12,9 @@ const addTwo = function(num) {
   console.log(num + 2);
 };
 
+const myNumber = 5;
+addTwo(myNumber);
+addTwo(4);
+
 runMyFunction(sayHello);
 runMyFunction(addTwo);

@@ -50,3 +50,13 @@ console.log('returnVal:', returnValue);
 
 // if (error)
 //   throw error;
+
+
+const middle = (arr) => {
+  // multiple lines of code
+  // multiple lines of code
+  // multiple lines of code
+  // multiple lines of code
+  // multiple lines of code
+  // multiple lines of code
+};
