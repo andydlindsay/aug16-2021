@@ -13,7 +13,10 @@ app.use(morgan('dev'));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/products', productRouter);
+app.use('/api/products', productRouter);
+
+// GET /products => HTML
+// GET /api/products => JSON
 
 app.get('/', (req, res) => {
   res.render('index');

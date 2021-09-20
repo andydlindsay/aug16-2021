@@ -6,7 +6,8 @@ const productQueries = require('../db/product-queries');
 router.get('/', (req, res) => {
   productQueries.getProducts()
     .then((products) => {
-      res.render('products', { products });
+      // res.render('products', { products });
+      res.json(products);
     });
 });
 
@@ -28,7 +29,10 @@ router.post('/', (req, res) => {
   const {productName, price} = req.body;
   productQueries.createProduct(productName, price)
     .then(() => {
-      res.redirect('/products');
+      // res.redirect('/products');
+      res.status(201).send();
+      // res.json({ success: true });
+      // res.json(newlyCreatedResource);
     });
 });
 
@@ -37,15 +41,17 @@ router.post('/:id', (req, res) => {
   const {productName, price} = req.body;
   productQueries.updateProduct(req.params.id, productName, price)
     .then(() => {
-      res.redirect(`/products/${req.params.id}`);
+      // res.redirect(`/products/${req.params.id}`);
+      res.status(200).send();
     });
 });
 
 // POST /products/:id/delete
-router.post('/:id/delete', (req, res) => {
+router.delete('/:id', (req, res) => {
   productQueries.deleteProduct(req.params.id)
     .then(() => {
-      res.redirect('/products');
+      // res.redirect('/products');
+      res.status(200).send();
     });
 });
 
