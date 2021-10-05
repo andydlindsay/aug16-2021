@@ -9,3 +9,5 @@
 * [BREAKOUT - CRUD with AJAX](/breakout-crud-with-ajax)
 * [W07D02 - Component-Based UI w/ React](/w07d02)
 * [W07D04 - Data Fetching & Other Side Effects](/w07d04)
+* [W08D02 - Unit & Integration Testing](/w08d02)
+* [W08D03 - End-to-End Testing with Cypress](/w08d03)
