@@ -1,5 +1,15 @@
 import React, { useEffect } from 'react';
-import { announceResult } from '../helpers/helpers';
+import { announceResult, getRobotChoice } from '../helpers/helpers';
+
+const resetState = (setState) => {
+  setState(prevState => ({
+      ...prevState,
+      playerSelection: null,
+      compSelection: null,
+      status: 'Waiting'
+    }
+  ));
+};
 
 const Player = (props) => {
   const {playerSelection, compSelection, cheating} = props.state;
@@ -19,20 +29,12 @@ const Player = (props) => {
 
   useEffect(() => {
     if (playerSelection) {
-      const compSelection = 'Moai';
+      const compSelection = getRobotChoice(playerSelection, cheating);
       setState(prevState => ({ ...prevState, compSelection }));
     }
   }, [playerSelection, cheating, setState]);
 
-  const resetState = () => {
-    setState(prevState => ({
-        ...prevState,
-        playerSelection: null,
-        compSelection: null,
-        status: 'Waiting'
-      }
-    ));
-  };
+  
 
   const registerPlayerItem = (value) => {
     setState(prevState => ({ ...prevState, playerSelection: value }));
@@ -43,7 +45,7 @@ const Player = (props) => {
       <span
         role="img"
         aria-label="player"
-        onClick={resetState}
+        onClick={() => resetState(setState)}
       >👤</span>
       <div>
         <h1>Choose your destiny !</h1>
