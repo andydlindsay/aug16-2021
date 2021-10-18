@@ -2,9 +2,9 @@
 
 ### To Do
 - [x] "Rails Week" Conversation
-- [ ] MVC Review
-- [ ] Quickly build simple Rails app
-- [ ] Nested Resources
+- [x] MVC Review
+- [x] Quickly build simple Rails app
+- [x] Nested Resources
 
 ### Rails Convo
 * I like it (Rails)
